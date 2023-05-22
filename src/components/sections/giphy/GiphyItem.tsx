@@ -1,3 +1,4 @@
+import Loader from '@/components/ui/Loader';
 import Image from 'next/image';
 
 type GiphyItemProps = {
@@ -13,7 +14,7 @@ const GiphyItem: React.FC<GiphyItemProps> = ({ src, alt }) => {
         alt={alt}
         width={200}
         height={200}
-        priority
+        priority={true}
         className="w-full h-full object-cover"
       />
     </div>

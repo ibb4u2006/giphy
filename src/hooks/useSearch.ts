@@ -1,8 +1,13 @@
 import { searchGifs } from '@/components/api/search';
 import { SEARCH_GIFS_QUERY } from '@/constants/queries';
-import { Pagination } from '@/types/response';
+import { GiphyAPIResponse, Pagination } from '@/types/response';
+import { AxiosError, AxiosResponse } from 'axios';
 import { useQuery } from 'react-query';
 
 export const useGetGifs = (params: Partial<Pagination>) => {
-  return useQuery([SEARCH_GIFS_QUERY], async () => searchGifs({ ...params }));
+  return useQuery<AxiosResponse<GiphyAPIResponse>, AxiosError>(
+    [SEARCH_GIFS_QUERY],
+    async () => searchGifs({ ...params }),
+    { refetchOnWindowFocus: false }
+  );
 };

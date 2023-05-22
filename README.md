@@ -3,6 +3,9 @@
 ## Get started
 
 ```sh
+# Copy environment variables
+cp .env.local.example .env.local
+
 # Install dependencies
 yarn install
 

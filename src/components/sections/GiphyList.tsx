@@ -6,12 +6,12 @@ type GiphyListProps = {
 };
 const GiphyList: React.FC<GiphyListProps> = ({ data }) => {
   return (
-    <div className="mb-32 grid gap-4 text-center lg:mb-0 lg:grid-cols-4 lg:text-left justify-center items-center">
+    <div className="grid gap-4 text-center lg:mb-0 lg:grid-cols-4 lg:text-left justify-center items-center">
       {data.map((giphy) => {
         return (
           <GiphyItem
             key={giphy.id}
-            src={giphy.images.original.url}
+            src={giphy.images.preview_webp?.url}
             alt={giphy.username}
           />
         );

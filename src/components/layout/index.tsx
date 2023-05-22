@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
-import Header from "./Header";
+import { Inter } from 'next/font/google';
+import Header from './Header';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between gap-10 p-6 lg:p-24 ${inter.className}`}
     >
       <Header />
       {children}
